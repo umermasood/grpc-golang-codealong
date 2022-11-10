@@ -1,12 +1,13 @@
 package main
 
 import (
+	pb "github.com/umermasood/grpc-golang-codealong/greet/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
 )
 
-var addr string = "localhost:50051"
+var addr = "localhost:50051"
 
 func main() {
 	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
@@ -19,5 +20,8 @@ func main() {
 			log.Fatalf("Failed to close connection: %v", err)
 		}
 	}(conn)
-	//...
+
+	c := pb.NewGreetServiceClient(conn)
+
+	doGreet(c)
 }
