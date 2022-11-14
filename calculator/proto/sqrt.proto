@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/umermasood/grpc-golang-codealong/calculator/proto";
+
+message SqrtRequest {
+  int32 number = 1; // could restricted to be uint32
+}
+
+message SqrtResponse {
+  double result = 1;
+}
