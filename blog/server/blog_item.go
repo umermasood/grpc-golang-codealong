@@ -10,7 +10,7 @@ import (
 // and the helper function will translate this proto object to a pb.Blog message
 
 type BlogItem struct {
-	ID       primitive.ObjectID `bson:"_id, omitempty"`
+	ID       primitive.ObjectID `bson:"_id,omitempty"`
 	AuthorId string             `bson:"author_id"`
 	Title    string             `bson:"title"`
 	Content  string             `bson:"content"`
