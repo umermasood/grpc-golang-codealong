@@ -15,7 +15,7 @@ func (s *Server) CreateBlog(ctx context.Context, in *pb.Blog) (*pb.BlogId, error
 	log.Printf("CreateBlog was invoked with: %v\n", in)
 
 	data := BlogItem{
-		AuthorId: in.AuthorId,
+		AuthorID: in.AuthorId,
 		Title:    in.Title,
 		Content:  in.Content,
 	}

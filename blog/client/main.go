@@ -23,6 +23,7 @@ func main() {
 	c := pb.NewBlogServiceClient(conn)
 
 	id := createBlog(c)
-	readBlog(c, id)              // test readBlog with a valid id
-	readBlog(c, "NonExistingID") // test readBlog with an invalid id
+	readBlog(c, id) // test readBlog with a valid id
+	//readBlog(c, "NonExistingID") // test readBlog with an invalid id
+	updateBlog(c, id)
 }
